@@ -1,0 +1,333 @@
+html,
+body {
+  font-size: 14;
+  font-family: sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background-color: #27302d;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+input, textarea, select {
+  border: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+*:focus, *:active {
+  outline: none;
+}
+
+.form {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 30px 0;
+  color: #fff;
+}
+
+.form__body {
+  position: relative;
+}
+
+.form__body._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form__body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(39, 48, 45, 0.5) url("/Spinner-5.gif") center/50px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form__title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.form__item {
+  margin-bottom: 20px;
+}
+
+.form__label {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form__input {
+  height: 50px;
+  padding: 0px 20px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  width: 100%;
+  font-size: 18px;
+}
+
+.form__input:focus {
+  background-color: #eee;
+  border: #3a574d solid 2px;
+}
+
+.form__input._error {
+  background-color: #f5baba;
+  border: #ff0000 solid 2px;
+}
+
+textarea.form__input {
+  min-height: 70px;
+  resize: vertical;
+  padding: 20px;
+}
+
+.options {
+  padding-top: 10px;
+}
+
+.options__item {
+  margin-bottom: 10px;
+}
+
+.options__label {
+  cursor: pointer;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 140%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+}
+
+.options__label::before {
+  content: '';
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 20px;
+      -ms-flex: 0 0 20px;
+          flex: 0 0 20px;
+  height: 20px;
+  background-color: #fff;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  margin-right: 10px;
+}
+
+.options__label::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background-color: #fff;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .2s ease;
+  -o-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.options__input {
+  display: none;
+}
+
+.options__input:checked + .options__label::after {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  background-color: #27302d;
+}
+
+.select {
+  width: 100%;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  padding: 2px;
+  font-weight: 700;
+}
+
+.file__item {
+  position: relative;
+}
+
+.file__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.file__input:hover + .file__button {
+  border: 2px solid #1e2724;
+  background-color: #3a574d;
+}
+
+.file__button {
+  background-color: #27302d;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-height: 30px;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
+  padding: 0px 30px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #3a574d;
+  -webkit-transition: border .2s ease, background-color .2s ease;
+  -o-transition: border .2s ease, background-color .2s ease;
+  transition: border .2s ease, background-color .2s ease;
+}
+
+.file__preview {
+  display: inline-block;
+  max-width: 120px;
+  padding-top: 10px;
+}
+
+.file__preview img {
+  max-width: 100%;
+}
+
+.checkbox._error .checkbox__label::before {
+  background-color: #f5baba;
+  border: #ff0000 solid 2px;
+}
+
+.checkbox__input {
+  display: none;
+}
+
+.checkbox__input:checked + .checkbox__label::after {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  background-color: #27302d;
+}
+
+.checkbox__label {
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 140%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkbox__label::before {
+  content: '';
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 16px;
+      -ms-flex: 0 0 16px;
+          flex: 0 0 16px;
+  height: 16px;
+  background-color: #fff;
+  margin-right: 10px;
+}
+
+.checkbox__label::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .2s ease;
+  -o-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.form__button {
+  width: 100%;
+  min-height: 30px;
+  background-color: #27302d;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  border: 2px solid #3a574d;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
+  color: #fff;
+  -webkit-transition: border .2s ease, background-color .2s ease;
+  -o-transition: border .2s ease, background-color .2s ease;
+  transition: border .2s ease, background-color .2s ease;
+}
+
+.form__button:hover {
+  border: 2px solid #1e2724;
+  background-color: #3a574d;
+}
